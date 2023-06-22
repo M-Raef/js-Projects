@@ -1,0 +1,1068 @@
+/* 
+border = عبارة عن خط او اشياء تحاوط القسم الذي اريده
+solid = هو النوع البوردير الذي انا ابيه 
+display: flex; = رح يخلي الكلام من شكل عامودي الى شكل افقي يعني رح يخليه على شكل محور ال x
+justify-content: space-around; = رح يوزع الكلام بسكل الذي اريده يمكن ان اعهم بالمنتصف او الاول يمين خالص الاخير يمين خالص والباقي متوزعين في النتصف من خلال space-between
+list-style-type: none; = نوع اللست هو بشكل اتوماتيكي بكون حاطط نقاط نحن منغيره لهي الطريقة انه ما يحط شي
+text-decoration: none; = وهنا نوع الكتابة رح نخليها نون مشان يشيل الخط يلي تحت الرابط
+display: inline-block; = نحن متل ما قلنا الرابط عنصر انلاين فعناصر الانلاين ما رح ينفع انه نلعب لا بطول ولا بالعرض ولا بل مارجن فرح نحوله الى انلاين بلوك مشان اقدر العب فيه
+box-shadow = رح تسوي طبقة وراء القسم الذي اريده القيمتان الاولتان مشان ال اكس و الواي القيمة الثالثة درجة وضوحه او درجة شفافيته
+font-family: 'Dancing Script', cursive; ===> in article h5 = هذا الخط يلي قمنا باضافته ليس موجود في فجول ستديو كود فذهبنا وبحثنا في غوغل عن غوغل خط بس بالانجليزي (google fonts) ورح اخد الخط يلي بدي ياه رح انسخ المكتبة واحطها با اتش تي ام ال ورح انادي الخط هون من خلال اسمه غوغل رح تكون حططه بالموقع
+opacity = يمكن من خلالها التحكم في شفافية الخط وقيمتها تتراوح بين الواحد والصفر
+box-sizing: border-box;=allows us to include the padding and border in an element's total width and height
+content = رح يضيق كلام من خلال سي اس اس
+::after = رح يضيف الكلام بعد الشيئ الموجود 
+::before =  رح يضيف الكلام قبل الشيئ الموجود
+*/
+
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+ /* this code to make scrollbar */
+::-webkit-scrollbar {
+  width: 1.1rem;
+ }
+ 
+::-webkit-scrollbar-track {
+  border: 7px solid #232943;
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  }
+ 
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #9e4673, #3d4a59);
+  border-radius: 1rem;
+}
+ 
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(270deg, #9e4673, #3d4a59, #9e4673);
+}
+
+header {
+  border-radius: 0 0 70px 70px;
+  margin-bottom: 100px;
+  background-color: #3d4a59;
+  color: white;
+}
+
+.dark header{
+  background-color: #443334;
+  border-bottom: 1px solid antiquewhite;
+}
+.dark header h1{
+  background-color: transparent; /*انه يكون شفاف*/
+}
+
+.dark{
+  background-color: #443334;
+  color: #fff;
+}
+.dark h1{
+  background-color: #9e4673;
+}
+.dark .container{
+  color: black;
+}
+
+header h1 {
+  margin-bottom: 25px;
+}
+
+.parent {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.parent li a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.parent li a:hover {
+  border-bottom: 2px solid red;
+  font-size: 20px;
+}
+
+.mode {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;  /*هذا رح يغير شكل الماوس على شكل ضغطة*/
+}
+.dark .mode{
+  box-shadow: 0 0 10px #9e4673;
+  background: #9e4673;
+}
+.mode:hover{
+  box-shadow: 0 0 10px #9e4673;
+  background: #9e4673;
+  border: none; /*يشيل الحواف*/
+}
+
+li {
+  list-style-type: none;
+  font-size: 18px;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px 0;
+
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+
+  background-color: #3d4a59;
+  color: #fff;
+
+  border-radius: 17px;
+  padding: 15px;
+}
+
+section {
+  margin-bottom: 100px;
+  box-shadow: 5px 5px 25px rgb(177, 176, 176);
+  border-radius: 13px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 97%;
+  padding: 45px 0;
+
+  transition: all 0.5s;
+}
+
+.left-section,
+.right-section {
+  width: 49%;
+
+  text-align: center;
+  margin-top: 60px;
+}
+.left-section h3 {
+  font-size: 25px;
+  margin: 20px 0;
+}
+.left-section p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.facebook,
+.youtube {
+  background-color: royalblue;
+  color: #fff;
+  margin: 10px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.youtube {
+  background-color: red;
+}
+
+.my-img {
+  border-radius: 50%;
+  width: 200px;
+  border-top: 7px solid red;
+  border-bottom: 7px solid red;
+  border-left: 7px solid gold;
+  border-right: 7px solid gold;
+}
+
+article h5 {
+  font-size: 25px;
+  font-family: "Dancing Script", cursive;
+  margin-top: 18px;
+}
+.para {
+  font-size: 20px;
+}
+
+.flex {
+  display: flex;
+
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  text-align: center;
+
+}
+.design {
+  padding: 15px;
+  text-align: center;
+  background-color: #3d4a59;
+  color: #fff;
+
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+
+  border-bottom: 0px;
+
+  margin-bottom: 0;
+}
+.dark .design{
+  background-color: transparent; /*انه يكون شفاف*/
+  border-top: 1px solid antiquewhite;
+}
+.mycard {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  /* border-radius: 5px; */
+}
+.cardimg {
+  height: 300px;
+  /* border-radius: 5px; */
+}
+
+.container {
+    margin-top: 50px;
+    background-color: #fff !important;
+    border: 2px solid;
+    border-radius: 12px;
+    width: 60%;
+    text-align: center;
+    padding: 20px 0;
+}
+.container p {
+  font-size: 20px;
+}
+.bigger-container {
+    background-color: rgb(206, 65, 40);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+
+}
+/*هذا من اجل انه رح ناديه ورح يخلي الكود تبع دفع الفيزا يظهر
+*/
+.active{
+    display: block;
+}
+
+.flex-pro{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /*when min the screen the card will be go down For if they were opened from the phone */
+}
+
+/**/
+#hiddenul{
+  display: block;
+  position: absolute;
+  box-shadow: 0 5px 25px 0 rgb(0 0 0 /  60%);
+  padding: 1rem;
+  border-radius: .5rem;
+  color: #3d4a59;
+  margin-right: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  line-height: 30px;
+  min-width: 100px;
+}
+#hiddenul li:hover{
+  font-weight: 500;
+  border-bottom: 1px solid red;
+}
+
+#myiframe ,.sidekick{
+  border-radius: 10px;
+  animation: mymove 2s 1;
+}
+#parent-iframe{
+  text-align: center;
+  margin-top: 50px;
+}
+@keyframes mymove{
+  0% {transform: translate(100vw,0);}
+  100% {transform: translate(0,0);}
+}
+/*https://www.bestcssbuttongenerator.com/#/21  websit to style the button*/
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #efdcfb;
+	background:linear-gradient(to bottom, #ba97d6 5%, #8c4bbe 100%);
+	background-color:#dfbdfa;
+	border-radius:6px;
+	border:2px solid #674581;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:10px 31px;
+	text-decoration:none;
+	text-shadow:0px 2px 10px #8f50c2;
+  display: block;
+  margin: 50px auto 20px auto;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #925dbb 5%, #a685c2 100%);
+	background-color:#8c4bbe;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+/*شكل للحكم*/
+.sidekick {
+  position: relative;
+  padding-left: 1em;
+  border-left: 0.2em solid #039be5;
+  font-family: sans-serif;
+  font-size: 2.4em;
+  line-height: 1.5em;
+  font-weight: 400;
+}
+.sidekick:before, .sidekick:after {
+  font-family: Calibri;
+    color: #039be5;
+    font-size: 34px;
+}
+.sidekick:before {content: '\201e'}
+.sidekick:after {content: '\201c';}
+.sidekick cite {font-size: 50%; text-align:center; top:50%}
+.sidekick cite:before {content: ' \2015 '}
+
+#parentquote{
+  text-align: center;
+  width: 80%;
+  margin: 50px auto 30px auto;
+}
+
+/*level 3 lesson 5 video #2*/
+/*linear = رح ينزل ويعمل الانيميشن بشكل سابت
+forwards = بعد ما يخلص الانيميشن رح يخليه باخر صورة صارت له عكس ال backwords رح يرجعه لحالته الاساسية
+  */
+.heart{
+  font-size: 30px;
+  animation: fall 2s 1 linear forwards;
+  position: fixed; /*position css رح تلاقي شرحه في قسم */
+  top: 0;
+}
+@keyframes fall{
+  0%{
+    transform: translateY(-5vh); /*v=viewport , h =height وهو من اول الشاشة الى الاسفل يعني الارتفاع تبع الشاشة */
+  }
+  100%{
+    transform: translateY(110vh); /*الشاشة كلهة 100 vh فمشان هيك رح ينزل اكثر من حجك الشاشة*/
+  }
+}
+/* level 3  lesson 6 video #1*/
+.q1, .q2, .q3{
+  margin: 40px auto;
+  width: 80%;
+}
+.plus{
+  font-size: 40px;
+  padding-right: 19px;
+}
+.plus:hover{
+  cursor: pointer;
+}
+.title-accordion{
+  display: flex; /* بمجؤد اضافة هاد الكود ممكن روح على مكانه من المتصفح ومن خلال البوكس الموجود هنيك رح يفيرجيني الاكواد يلي ممكن اجطها تساعدني على تظبيط شكله واضافته */
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(65, 105, 225, 0.9);
+  color: white;
+  border-radius: 5px;
+  padding: 4px;
+}
+.title-accordion h2{
+  margin-left: 20px;
+}
+/* في الحالة الاولة لل اكورديان ما رح يكوم ظاهر وارتفاعه صغر بالحالة الثانية رح يكون ظاهر وارتفاعه 150 */
+.content{
+  padding: 18px;
+  /* display: none; */
+  height: 0px;
+  opacity: 0;
+
+  background-color: rgb(221, 239 ,255);
+  font-size: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 3px solid  rgb(174, 217, 255);
+  text-align: left;
+  transition: all 0.5s;
+}
+.active-accordion{
+
+  opacity: 1;
+}
+/* we did accordion another way in html css but we cant make transtion in html accordion */
+details{
+  font-size: 26px;
+  width: 80%;
+  margin: 50px auto;
+  text-align: left;
+}
+details p{
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+
+/* level 3 lesson 7 video #1 digital clock*/
+
+.clock-container{
+  text-align: center;
+  background-color: #2E94E3;
+  width: 300px;
+  color: white;
+  margin: 60px auto ;
+  border-radius: 6px;
+  font-size: 20px;
+  padding: 17px;
+  transition: all 0.4s;
+}
+.clock-container:hover{
+  box-shadow: 5px 5px 17px #1e85d4d8;
+  background-color: #2E94E3;
+  width: 330px;
+}
+.time{
+  font-size: 30px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+
+/* level 3 lesson 8 video #1 Slider, Slide Show */
+.img-slider{
+  display: block; /* لان الصور بكونو انلاين فحولناهن ل بلوك مشان على قد ما صغرنا وكبرنا الشاشة يضلو تحت بعض يعني يتعاملو معاملة البلوك */
+  position: absolute;
+  top: 0px;
+  width: 700px;
+  height: 400px;
+  border-radius: 12px;
+}
+.slider-container{
+  width: 700px;
+  height: 400px;
+  position: relative;
+
+  margin: 50px auto 30px;
+}
+.slider-container p{
+  z-index: 6;  /* is a CSS property that defines the order of overlapping HTML elements is will work when we add position */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-color: #039be5;
+  color: #fff;
+  font-size: 20px;
+  padding: 6px 8px;
+  border-radius: 5px;
+}
+
+.num-container{
+  width: 600px;
+  display: flex;
+  justify-content: space-between;/* we nedd but display flex first to do ad justify content */
+  align-items: center;/*بوسطهن بشكل راسيا */
+  margin-left: auto;
+  margin-right: auto;
+
+}
+#pre, #next{
+  font-size: 22px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background-color: #2e95e3;
+}
+
+#next:active{
+  transform: translateX(4px);
+}
+#pre:active{
+  transform: translateX(-4px);
+}
+#next:hover ,#pre:hover{
+  background-color: #3ea6f5;
+}
+.num-container button{
+  all: unset; /*بشيل جميع التنصفات البوتن*/
+  color: #fff;
+
+}
+.numbers button{
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 20px;
+  margin-left: 7px;
+  border-color: #f3f3f3;
+  color: #222;
+}
+.numbers button:hover{
+  background-color: #2e95e3 !important;
+  color: #fff  !important;
+}
+.numbers button:active{ /* hold in mouse */
+  padding: 4px 9px;
+}
+.active-num{
+  background-color: #2e95e3 !important;
+  color: #fff  !important; 
+}
+
+
+/* level 3 lesson 8 video #3 */
+#pre:disabled,#next:disabled{
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* level 3 lesson 9 video #1 , Toggle Tabs*/
+.alltabs{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+.mybtn{
+  all: unset;
+  margin: 0.5rem;
+  color: #3d4a59;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  padding: 0.375rem 0.75rem;
+  font-size: 20px;
+  line-height: 1.5;
+  border-radius: 0.4rem;
+  transition: all .5s;
+  text-transform: capitalize;
+  opacity: 0.5;
+
+  border: 1px solid;
+}
+.mybtn:hover{
+  background-color: royalblue;
+  color: #fff;
+  font-size: 24px;
+  opacity: 1;
+}
+.dark .mybtn{
+  color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 #9e4673, 0 0 10px #9e4673, 0 0 0 #9e4673;
+}
+.dark .mybtn:hover{
+  background-color: #fc4364;
+  opacity: 1;
+}
+.active-btn{
+  background-color: royalblue;
+  color: #fff;
+  font-weight: 600;
+  opacity: 1;
+}
+.dark .active-btn{
+  background-color: #fc4364;
+}
+
+/* level 3 lesson 9 video #2 */
+.fun-facts h2{
+  text-align: center;
+  color: royalblue;
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+.dark .fun-facts h2{
+  color: antiquewhite;
+}
+.fun-facts ol{
+  width: fit-content;/* يلائم المحتوى */
+  margin: auto;
+  line-height: 40px;  /* المسافة بين الخطوط */
+  text-align: left;
+}
+
+.active-article{
+  opacity: 1 !important;
+  z-index: 5;
+}
+
+/* position */
+.parent-of-article{
+  position: relative;
+  height: 280px;
+}
+@media (max-width : 550px) { /* في هذه الحالة الشاشات الاصغر من 550 رح يصير الطول 300 */
+  .parent-of-article{
+    height: 300px;
+  }
+}
+
+
+.fun-facts{
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  transition: all 0.5s;
+}
+
+/* auto numbering of ol & ul */
+ol li{
+  list-style: none;
+}
+ol{
+  counter-reset: plusone;
+}
+ol li::before{
+  counter-increment: plusone;
+  content: counter(plusone);
+
+  background-color: #fc4364;
+  padding: 0.1rem 0.45rem;
+  color: white;
+  border-radius: 0.5rem;
+  margin: 0.5em;
+  font-size: 1.2rem;
+  box-shadow: 0 7px 93px 0 rgba(255, 131, 131, 0.47);
+}
+
+
+
+/*============
+  level 3 lesson 10
+  validatiom form
+==============*/
+
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.form-container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 21px 0 8px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  opacity: 0.9;
+
+  display: block;
+  margin-left: auto; /* هذولي الخاصتين بيمشي حالن على العناصر البلوك فقط و الزرار ليس عنصر بلوك */
+  margin-right: auto;
+  border-radius: 5px;
+
+  
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+/*============
+  our codses
+==============*/
+
+.parent-of-form{
+  /* warning =   */
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.438);
+  position: fixed;
+  top: 0;
+  right: 0;left: 0;bottom: 0;
+  z-index: 10;
+}
+form{
+  width: 35%;
+  background-color: #fff;
+  padding-top: 18px;
+  border-radius: 5px;
+
+  transform: scale(0);
+  transition: all 0.6s;
+}
+@media (max-width :1000px){
+  form{
+    width: 60%;
+  }
+}
+@media (max-width :700px){
+  form{
+    width: 80%;
+  }
+}
+label{
+  text-align: left;
+  float: left;
+}
+
+#close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  opacity: 0.75;
+  transition: all 0.5s;
+}
+#close:hover{
+  transform: rotate(180deg);
+  font-size: 24px;
+  opacity: 1;
+  cursor: pointer;
+  font-weight: 600;
+}
+.papa{
+  margin-top: 22px;
+  position: relative;
+}
+.icon-check-circle{
+  color: #04AA6D ;
+  font-size: 20px;
+  position: absolute;
+  top: 37px;
+  right: 10px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.papa p{
+  font-size: 14px;
+  color: red;
+  text-align: left;
+  display: none;
+}
+
+/*============
+  level 3 lesson 10 video#2
+  validation form
+==============*/
+.error{
+  border: 2px solid red !important;
+}
+.success{
+  border: 2px solid #04AA6D !important;
+}
+button:disabled{
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+/* الاكواد يلي بالاسفل كلهم مسؤلين عن اخفاء العنصر
+display:none;
+visibility:hidden;
+في هدول الخاصيتين الموجودين في الاعلى عند الاخفاء يصبح فورا فعند اضافو وقت لا يتحقق
+اما الاخاصتين الموجودين بالاسفل ممكن اضافة لهم وقت من اجل التحقق  لان من 0 الى ال1 يوجد 0.1 و 0.2 ف الوقت الذي بينهم ممكن ازيده
+
+opacity:0;
+transform : scale(1);
+
+transition :all 3s;
+*/
+
+
+
+
+/* ===============
+    level3 lesson11 video#1
+   TOOTstap
+================ */
+ 
+:root {
+  --yourColor: #ea336a;
+}
+/* هنا الرووت هو فاريبل بس في السي اس اس تحت في الاكواد استخدمناها اكثر من مرة  */
+
+* {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+.divcontainer {
+  margin-top: 50px;
+}
+
+.myflex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.number-box {
+  text-align: center;
+  padding: 14px 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  width: 20rem;
+}
+
+.number-red {
+  background-color: var(--yourColor);
+}
+
+.num {
+  color: #fff;
+  border: 3px solid #fff;
+  padding: 2px 8px;
+}
+
+.html-course {
+  color: var(--yourColor);
+}
+
+.course-title {
+  font-size: 1.7rem;
+  padding: 30px 0 15px 0;
+}
+
+p.click {
+  color: var(--yourColor);
+  font-size: 1.7rem;
+  font-weight: bold;
+  display: none;
+  color: #fff;
+  transform: translateY(-40px);
+}
+
+.course-box:hover p.click {
+  display: block;
+}
+
+.course-box:hover .mark {
+  display: none;
+}
+
+.html-logo {
+  background-color: var(--yourColor);
+}
+
+.bottom-course {
+  color: white;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 4px 0;
+  margin-top: 19px;
+  border-top: 3px solid #fff;
+}
+
+.mark {
+  font-size: 3.2rem;
+  height: 50px;
+  display: block;
+}
+
+.dark .course-box,
+.dark .course-title,
+.dark .last-two-parts {
+  background-color: aliceblue;
+}
+
+.html-container {
+  color: var(--yourColor);
+}
+
+.last-two-parts {
+  font-weight: bolder;
+  font-size: 2.5rem;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding-top: 20px;
+}
+
+.dark .course-box:hover .course-title,
+.dark .course-box:hover .last-two-parts {
+  background-color: inherit;
+}
+
+.html-box:hover {
+  background-color: var(--yourColor);
+  box-shadow: 0 7px 93px 0 rgba(255, 131, 131, 0.47);
+}
+
+.dark .html-box:hover {
+  background-color: var(--yourColor);
+}
+
+.course-box {
+  border-radius: 8px;
+  box-shadow: 0 0 4px 0 rgba(17, 22, 26, 0.16), 0 2px 4px 0 rgba(17, 22, 26, 0.08), 0 4px 8px 0 rgba(17, 22, 26, 0.08);
+  transition: all 0.4s;
+  text-align: center;
+}
+
+.course-box:hover {
+  animation-name: fade-down;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media (max-width: 688px) {
+  .dark .number-box {
+    background-color: aliceblue;
+  }
+  .last-two-parts {
+    padding-top: 0;
+  }
+  .mark {
+    display: none;
+  }
+  .number-box {
+    width: 17rem;
+    background-color: #fff;
+  }
+  .number-red .num {
+    color: var(--yourColor);
+    border-color: var(--yourColor);
+  }
+  .course-box:hover .number-red {
+    background-color: var(--yourColor);
+  }
+  .course-box:hover .num {
+    color: #fff;
+    border-color: white;
+  }
+  .number-red {
+    border-top: 7px solid var(--yourColor);
+  }
+}
+
+
+/* ===============
+    level3 lesson11 video#2
+   TOOTstap
+================ */
+
+.allcodes{
+  width: 80%;
+  margin:50px auto ;
+  position: relative;
+  line-height: 30px;
+
+}
+#mypre{
+  border-radius: 50px;
+  font-size: 18px;
+  padding-top: 80px;
+  border: 2px solid antiquewhite;
+  height: 600px;
+}
+.copy{
+  all: unset;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  padding: 6px 8px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 0.4rem;
+  transition: all .5s;
+  text-transform: capitalize;
+
+  border: 1px solid #fff;
+  background-color: royalblue;
+  
+
+}
+
+.copy:hover{
+  background-color: royalblue;
+  color: #fff;
+  font-size: 20px;
+  opacity: 1;
+}
+.dark .copy{
+  color: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0 0 0 #9e4673, 0 0 10px #9e4673, 0 0 0 #9e4673;
+  opacity: 0.9;
+  background-color: transparent;
+}
+.dark .copy:hover{
+  background-color: #fc4364;
+  opacity: 1;
+}
+.our-lang{
+  position: absolute;
+  left: 20px;
+  top: 26px;
+
+  background-color: #fc4364;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  padding: 6px 8px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 3px;
+  text-transform: capitalize;
+
+  border: 1px solid #fff;
+}
+summary{
+  text-align: right;
+}
+summary:hover{
+  cursor: pointer;
+}
